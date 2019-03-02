@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ConsoleDotNetCore
 {
@@ -6,7 +6,15 @@ namespace ConsoleDotNetCore
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ConsoleColor[] Colors = (ConsoleColor[])Enum.GetValues(typeof(ConsoleColor));
+
+            foreach (ConsoleColor foregroundColor in Colors)
+            {
+                Console.ForegroundColor = foregroundColor;
+                Console.Write(foregroundColor);
+            }
+            Console.ResetColor();
+            Console.WriteLine();
         }
     }
 }
